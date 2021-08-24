@@ -62,10 +62,10 @@ function showMovies(data) {
 // Get ratings and colors
 function getColor(vote) {
   if (vote >= 8) {
-    return 'green';
+    return 'red';
   } else if (vote >= 5) {
     return 'orange';
   } else {
-    return 'red';
+    return 'green';
   }
 }

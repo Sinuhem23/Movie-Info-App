@@ -29,8 +29,10 @@ a:hover {
 
 header {
   padding: 1rem;
-  display: flex;
-  justify-content: flex-end;
+  display: grid;
+  position: sticky;
+  top: 0;
+  z-index: 1;
   background-color: var(--secondary-color);
 }
 /* End of affects all ///////////////////////////////////// */
@@ -143,13 +145,34 @@ main {
 }
 
 .movie-info span.green {
-  color: lightgreen;
+  color: red;
 }
 .movie-info span.orange {
-  color: orange;
+  color: rgb(255, 208, 0);
 }
 .movie-info span.red {
-  color: red;
+  color: greenyellow;
+}
+.releaseDate {
+  color: rgb(161, 203, 243);
+  font-weight: bold;
+  display: grid;
+  justify-content: center;
+}
+
+.overview {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  padding: 1rem;
+  max-height: 100%;
+  transform: translateY(101%);
+  transition: transform 0.3s ease-in;
+}
+.movie:hover .overview {
+  transform: translateY(0);
 }
 /* End of Movie info display //////////////////////////////// */
 /* Footer Section  //////////////////////////////////*/
