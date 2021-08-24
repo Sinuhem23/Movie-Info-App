@@ -1,77 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
 <link>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- CSS -->
-  <link href="./style.css" rel="stylesheet" />
+  <link href="../CSS/style.css" rel="stylesheet" />
   <!-- End of CSS -->
   <!-- JS File -->
-    <script defer src="movie.js"></script>
+    <script defer src="../movie.js"></script>
     <!-- End of JS File -->
   <title>Movie Info App</title>
 </head>
 <body>
-  
+  <!-- Navbar -->
+  <nav class="nav">
+      <a href="./index.html"><img class="icon-1" src="../Image/icon.svg"/></a>
+    </div>
+    <h4 class="website_name">Movie Info</h4>
+   
+    <div class="icon-2">
+      <h3>
+        <a href="./index.html">Home</a>
+      </h2>
+    </div>
+    <div class="icon-3">
+      <h3>
+      <a href="./about.html">About Me</a>
+    </h3>
+    </div>
+  </nav>
+  <!-- End of Nav -->
   <header>
+    <!-- Form for searching movies -->
     <form id='form'>
-      <input type='text' placeholder="Search"
+      <input type='text' placeholder="Search a word in a title"
       id="search"
       class="search">
     </form>
+    <!-- End of movie form -->
   </header>
+  <h4 class="genre_text">Genre</h4>
+
+  <div id="tags">
+   <!-- Where the tag divs will populate displaying genres -->
+  </div>
 
   <main id="main">
-    <div class="movie">
-      <img src="https://images.unsplash.com/photo-1518173835740-f5d14111d76a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWd1fHx8fGVufD88fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=877&q=80" alt="image">
-
-<div class="movie-info">
-  <h3>Movie Info</h3>
-  <span class="green">9.8</span>
-</div>
-  <div class="overview">
-    <h3>Overview</h3>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. A temporibus quisquam expedita, asperiores quis quasi amet et minus aliquid aperiam excepturi est quibusdam, quas optio ratione eligendi. Placeat, consequatur sapiente.
-  </div>
-
-    </div>
-
-    <div class="movie">
-      <img src="https://images.unsplash.com/photo-1518173835740-f5d14111d76a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWd1fHx8fGVufD88fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=877&q=80" alt="image">
-
-<div class="movie-info">
-  <h3>Movie Info</h3>
-  <span class="orange">9.8</span>
-</div>
-  <div class="overview">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. A temporibus quisquam expedita, asperiores quis quasi amet et minus aliquid aperiam excepturi est quibusdam, quas optio ratione eligendi. Placeat, consequatur sapiente.
-  </div>
-
-    </div>
-
-    <div class="movie">
-      <img src="https://images.unsplash.com/photo-1518173835740-f5d14111d76a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWd1fHx8fGVufD88fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=877&q=80" alt="image">
-
-<div class="movie-info">
-  <h3>Movie Info</h3>
-  <span class="red">9.8</span>
-</div>
-  <div class="overview">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. A temporibus quisquam expedita, asperiores quis quasi amet et minus aliquid aperiam excepturi est quibusdam, quas optio ratione eligendi. Placeat, consequatur sapiente.
-  </div>
-
-    </div>
-
-
-
-
-
-
-
+  <!-- Where cards of movie images and info will populate as well as rating -->
 
   </main>
+<footer class="footer_container">
+  <a href="./form_pg.html"><p class="surveyBTN">Survey</p></a>
 
+<a href="#"><p class="topBTN">Top</p></a>
+
+</footer>
 
 
 
