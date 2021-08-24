@@ -90,6 +90,8 @@ header {
 
 .search:focus {
   outline: 0;
+}
+.search:hover {
   background-color: var(--primary-color);
 }
 
@@ -104,6 +106,36 @@ header {
   border-bottom: 1px solid var(--secondary-color);
   justify-content: center;
   padding: 1rem 0;
+  color: #fff;
+}
+
+#tags {
+  border-bottom: 1px solid var(--secondary-color);
+  padding: 0 0 1rem 0;
+
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-self: center;
+}
+.tag {
+  font-family: inherit;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}
+.tag:hover {
+  color: rgb(31, 96, 156);
+}
+.tag.highlight {
+  border-radius: 9px;
+  color: #fff;
+  background-color: rgb(31, 96, 156);
+  padding: 5px;
+}
+.no_Results {
+  margin-top: 12rem;
   color: #fff;
 }
 /* End of Genre Section ///////////////////////////////////// */
@@ -212,4 +244,43 @@ main {
   color: rgb(161, 203, 243);
 }
 
-/* End of Footer ////////////////////////*/
+/* End of Footer ////////////////////////////////////*/
+/* Media Queries //////////////////////////////////// */
+@media (max-width: 650px) {
+  .nav {
+    justify-content: inherit;
+    align-items: center;
+  }
+  .website_name {
+    font-size: small;
+  }
+  .icon {
+    padding: 1rem;
+
+    height: 5rem;
+  }
+
+  .homeBtn_icon {
+    font-size: small;
+  }
+  .about_me_icon {
+    font-size: small;
+    padding-right: 2rem;
+  }
+  .footer {
+    position: inherit;
+  }
+  .genre_search {
+    margin: 0;
+  }
+  .no_Results {
+    font-size: medium;
+    margin-top: 2rem;
+  }
+  .tag {
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+/* End of Media Queries ///////////////////////////// */

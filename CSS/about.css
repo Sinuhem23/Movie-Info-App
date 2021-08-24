@@ -110,6 +110,7 @@ body {
   box-shadow: 0 2px rgb(58, 58, 58);
 }
 .about_me_text {
+  margin-top: 4rem;
   padding: 1rem 3rem 0 3rem;
   color: rgb(31, 96, 156);
   display: flex;
@@ -117,7 +118,14 @@ body {
   align-self: center;
   flex-wrap: wrap;
 }
-
+.about_me_text2 {
+  padding: 1rem 3rem 0 3rem;
+  color: rgb(31, 96, 156);
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-wrap: wrap;
+}
 /* Footer Section  ////////////////////*/
 .footer_container {
   display: grid;
@@ -165,23 +173,23 @@ body {
 }
 @media (max-width: 650px) {
   .nav {
-    position: inherit;
     justify-content: inherit;
     align-items: center;
   }
   .website_name {
     font-size: small;
   }
-  .icon-1 {
+  .icon {
     padding: 1rem;
     height: 5rem;
   }
 
-  .icon-2 {
+  .homeBtn_icon {
     font-size: small;
   }
-  .icon-3 {
+  .about_me_icon {
     font-size: small;
+    padding-right: 2rem;
   }
   .img_container {
     padding-bottom: 6.5rem;
@@ -199,12 +207,10 @@ body {
     max-height: 76vh;
   }
   .about_me_heading_text {
-    display: grid;
     justify-content: center;
     position: sticky;
-    top: 0;
+    top: 5rem;
     z-index: 1;
-    padding-top: 3rem;
     background-color: transparent;
 
     border-bottom: 1px solid #fff;
@@ -212,6 +218,9 @@ body {
   }
 
   .about_me_text {
+    padding: 1rem;
+  }
+  .about_me_text2 {
     padding: 1rem;
   }
   .footer {
