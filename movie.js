@@ -69,3 +69,146 @@ function getColor(vote) {
     return 'green';
   }
 }
+
+// List of API's Genres
+const genres = [
+  {
+    id: 28,
+    name: 'Action',
+  },
+  {
+    id: 12,
+    name: 'Adventure',
+  },
+  {
+    id: 16,
+    name: 'Animation',
+  },
+  {
+    id: 35,
+    name: 'Comedy',
+  },
+  {
+    id: 80,
+    name: 'Crime',
+  },
+  {
+    id: 99,
+    name: 'Documentary',
+  },
+  {
+    id: 18,
+    name: 'Drama',
+  },
+  {
+    id: 10751,
+    name: 'Family',
+  },
+  {
+    id: 14,
+    name: 'Fantasy',
+  },
+  {
+    id: 36,
+    name: 'History',
+  },
+  {
+    id: 27,
+    name: 'Horror',
+  },
+  {
+    id: 10402,
+    name: 'Music',
+  },
+  {
+    id: 9648,
+    name: 'Mystery',
+  },
+  {
+    id: 10749,
+    name: 'Romance',
+  },
+  {
+    id: 878,
+    name: 'Science Fiction',
+  },
+  {
+    id: 10770,
+    name: 'TV Movie',
+  },
+  {
+    id: 53,
+    name: 'Thriller',
+  },
+  {
+    id: 10752,
+    name: 'War',
+  },
+  {
+    id: 37,
+    name: 'Western',
+  },
+];
+// calling setGenre - a function to search genres and dynamically create the list of genres
+var selectedGenre = [];
+setGenre();
+function setGenre() {
+  // Set empty to populate for forloop
+  tagsElement.innerHTML = '';
+  genres.forEach((genre) => {
+    const genre_tags = document.createElement('div');
+    genre_tags.classList.add('tag');
+    genre_tags.id = genre.id;
+    genre_tags.innerText = genre.name;
+    genre_tags.addEventListener('click', () => {
+      // pushing the genre.id to the array selectedGenre
+      if (selectedGenre.length == 0) {
+        selectedGenre.push(genre.id);
+      } else {
+        if (selectedGenre.includes(genre.id)) {
+          selectedGenre.forEach((id, index) => {
+            // remove array from selectedGenre when clicked again
+            if (id == genre.id) {
+              selectedGenre.splice(index, 1);
+            }
+          });
+        } else {
+          selectedGenre.push(genre.id);
+        }
+      }
+      console.log(selectedGenre);
+      getMovies(API_URL + '&with_genres=' + encodeURI(selectedGenre.join(',')));
+      highlightSelection();
+    });
+    tagsElement.append(genre_tags);
+  });
+}
+
+// Function that adds highlight to selected dynamic genres / removes
+function highlightSelection() {
+  const tags = document.querySelectorAll('.tag');
+  tags.forEach((tag) => {
+    tag.classList.remove('highlight');
+  });
+
+  if (selectedGenre.length != 0) {
+    selectedGenre.forEach((id) => {
+      const highlightedTag = document.getElementById(id);
+      highlightedTag.classList.add('highlight');
+    });
+  }
+}
+
+// Added an event listener to query searched word and display movies with word
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const searchTerm = search.value;
+  selectedGenre = [];
+  highlightSelection();
+
+  if (searchTerm) {
+    getMovies(searchURL + '&query=' + searchTerm);
+  } else {
+    getMovies(API_URL);
+  }
+});
