@@ -59,7 +59,7 @@ function showMovies(data) {
   });
 }
 
-// Get ratings and colors
+// Function getColor recieves the vote as a parameter and out puts a color based on its number
 function getColor(vote) {
   if (vote >= 8) {
     return 'red';
@@ -178,18 +178,19 @@ function setGenre() {
       }
       console.log(selectedGenre);
       getMovies(API_URL + '&with_genres=' + encodeURI(selectedGenre.join(',')));
-      highlightSelection();
+      highlightSection();
     });
     tagsElement.append(genre_tags);
   });
 }
 
 // Function that adds highlight to selected dynamic genres / removes
-function highlightSelection() {
+function highlightSection() {
   const tags = document.querySelectorAll('.tag');
   tags.forEach((tag) => {
     tag.classList.remove('highlight');
   });
+  resetBtn();
 
   if (selectedGenre.length != 0) {
     selectedGenre.forEach((id) => {
@@ -198,13 +199,35 @@ function highlightSelection() {
     });
   }
 }
+// Function that adds highligt to reset btn if it exists else brings out a reset button once genre is highlighted
+function resetBtn() {
+  let resetBtn = document.getElementById('reset');
+  if (resetBtn) {
+    resetBtn.classList.add('hightlight');
+  } else {
+    let reset = document.createElement('div');
+    reset.classList.add('tag', 'highlight');
+    reset.id = 'reset';
+    reset.innerText = 'Reset';
+    // Function that removes all the selected genres
+    reset.addEventListener('click', () => {
+      selectedGenre = [];
+      setGenre();
+      // to reset back as if page were refreshed
+      getMovies(API_URL);
+    });
+
+    tagsElement.append(reset);
+  }
+}
 
 // Added an event listener to query searched word and display movies with word
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const searchTerm = search.value;
+  // When a word is searched, it will remove any selected genre
   selectedGenre = [];
-  highlightSelection();
+  highlightSection();
 
   if (searchTerm) {
     getMovies(searchURL + '&query=' + searchTerm);

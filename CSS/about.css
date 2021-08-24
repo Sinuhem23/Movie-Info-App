@@ -165,12 +165,19 @@ body {
 
 /* End of Footer ////////////////////////*/
 /* Media //////////////////////////////*/
-@media (max-width: 900px) {
+/* Ipad Pro */
+@media (max-width: 1200px) {
   .aboutMe_container {
-    top: 13rem;
-    height: 17.5rem;
+    top: 20%;
   }
 }
+/* Ipad */
+@media (max-width: 800px) {
+  .aboutMe_container {
+    top: 23%;
+  }
+}
+/* Iphone x */
 @media (max-width: 650px) {
   .nav {
     justify-content: inherit;

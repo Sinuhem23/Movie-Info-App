@@ -175,14 +175,16 @@ main {
   border-radius: 3px;
   font-weight: bold;
 }
-
-.movie-info span.green {
+/* Highest rating */
+.movie-info span.red {
   color: red;
 }
+/* Mid rating */
 .movie-info span.orange {
   color: rgb(255, 208, 0);
 }
-.movie-info span.red {
+/* Lowest rating */
+.movie-info span.green {
   color: greenyellow;
 }
 .releaseDate {
