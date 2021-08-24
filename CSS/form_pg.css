@@ -207,6 +207,9 @@ body {
     width: 145vw;
   }
   .title {
-    margin-top: 8rem;
+    margin-top: 6rem;
+  }
+  .subtitle {
+    margin-bottom: 3rem;
   }
 }
