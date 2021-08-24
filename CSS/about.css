@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+* {
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #202020;
+  --secondary-color: #2e2d2d;
+  --footer-color: rgb(12, 12, 12);
+}
+html {
+  scroll-behavior: smooth;
+}
+a {
+  color: rgb(161, 203, 243);
+  text-decoration: none;
+}
+a:hover {
+  color: rgb(31, 96, 156);
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  background-color: var(--primary-color);
+}
+.test {
+  display: grid;
+}
+
+.nav {
+  border-bottom: 4px solid rgb(49, 56, 63);
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: flex-end;
+  background-color: rgb(12, 12, 12);
+  color: white;
+}
+
+.website_name {
+  flex: 1;
+
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.icon-1 {
+  padding: 1rem 1rem 1rem 6rem;
+  height: 8rem;
+  align-items: center;
+}
+.icon-1:hover {
+  opacity: 0.7;
+}
+
+.icon-2 {
+  align-items: center;
+  padding: 0 20px;
+}
+.icon-3 {
+  padding-right: 6rem;
+  align-items: center;
+}
+.img_container {
+  /* background-image: url('../Image/about-me-bg.jpeg'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 100px;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-bottom: 4.5rem;
+
+  width: 100%;
+  height: 80vh;
+  margin-top: 4rem;
+}
+.aboutMe_container {
+  display: grid;
+  grid-template-columns: 1fr;
+  position: absolute;
+  top: 24%;
+  height: 36%;
+  left: 27%;
+  right: 27%;
+  z-index: 1;
+  opacity: 0.8;
+
+  background: rgb(255, 254, 234);
+}
+.container_scroll {
+  overflow: scroll;
+}
+.about_me_info {
+  display: grid;
+
+  padding: 2em;
+}
+.about_me_heading_text {
+  display: grid;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  padding: 1rem 0;
+  background-color: rgb(255, 254, 234);
+
+  box-shadow: 0 2px rgb(58, 58, 58);
+}
+.about_me_text {
+  padding: 1rem 3rem 0 3rem;
+  color: rgb(31, 96, 156);
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-wrap: wrap;
+}
+
+/* Footer Section  ////////////////////*/
+.footer_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+  background-color: var(--footer-color);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  border-top: 1px solid rgb(238, 238, 238);
+  box-shadow: -3px -3px lightgray;
+}
+.surveyBTN {
+  display: flex;
+  color: white;
+  padding-left: 6rem;
+  justify-content: flex-start;
+  font-weight: bold;
+  cursor: pointer;
+}
+.surveyBTN:hover {
+  color: rgb(161, 203, 243);
+}
+.topBTN {
+  display: flex;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  justify-content: flex-end;
+  padding-right: 6rem;
+}
+.topBTN:hover {
+  color: rgb(161, 203, 243);
+}
+
+/* End of Footer ////////////////////////*/
+/* Media //////////////////////////////*/
+@media (max-width: 900px) {
+  .aboutMe_container {
+    top: 13rem;
+    height: 17.5rem;
+  }
+}
+@media (max-width: 650px) {
+  .nav {
+    position: inherit;
+    justify-content: inherit;
+    align-items: center;
+  }
+  .website_name {
+    font-size: small;
+  }
+  .icon-1 {
+    padding: 1rem;
+    height: 5rem;
+  }
+
+  .icon-2 {
+    font-size: small;
+  }
+  .icon-3 {
+    font-size: small;
+  }
+  .img_container {
+    padding-bottom: 6.5rem;
+  }
+  .aboutMe_container {
+    color: #fff;
+    position: inherit;
+    top: 0;
+    background-image: url('../Image/phone_aboutme_bg.jpeg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #020202;
+    width: 100%;
+    height: auto;
+    max-height: 76vh;
+  }
+  .about_me_heading_text {
+    display: grid;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding-top: 3rem;
+    background-color: transparent;
+
+    border-bottom: 1px solid #fff;
+    box-shadow: none;
+  }
+
+  .about_me_text {
+    padding: 1rem;
+  }
+  .footer {
+    background-color: var(--footer-color);
+
+    z-index: 2;
+  }
+  .aboutMe_container {
+    opacity: 1;
+  }
+}
