@@ -8,6 +8,10 @@
   <!-- CSS -->
   <link href="../CSS/form_pg.css" rel="stylesheet" />
   <!-- End of CSS -->
+  <!-- Javascript -->
+  <script defer src="../form.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script> 
+  <!-- End of Javascript -->
  
   <title>Movie Info App</title>
 </head>
@@ -39,12 +43,17 @@
     <div class="subtitle">Your Top 3 Favorite Movies</div>
 
     <!-- Survey Form -->
-  <form action="https://formsubmit.co/sinuhem23@gmail.com" method="POST" class="survey_form">
+    <!-- To refresh automatically  -->
+    <!-- onsubmit= setTimeout(function(){window.location.reload();},10) -->
+  <form onsubmit= 'return false' class="survey_form">
+    <!-- action="https://formsubmit.co/sinuhem23@gmail.com"  method="POST" -->
     <!-- upload to a website saying Thank You! -->
     <!-- <input type="hidden" name="_next" value="" > -->
     <!-- or -->
     <!-- Auto response back to user -->
-    <input type="hidden" name="_autoresponse" value="Thanks for sharing with me!">
+
+    <!-- <input type="hidden" name="_autoresponse" value="Thanks for sharing with me!"> -->
+
     <!-- Name -->
     <input type="text" name="name" class="form_input" placeholder="Name" required>
   
@@ -54,7 +63,8 @@
     <input type="text" name="message" class="form_input"  placeholder="Your Top 3 Favorite Movies!" required>
 
     <!-- Automatically places value to subject line on email -->
-    <input type="hidden" name="_subject" class="form_input"  value="New Top 3!"  >
+    <!-- <input type="hidden" name="_subject" class="form_input"  value="New Top 3!"  > -->
+
     <!-- Submit button -->
     <button type="submit" class="submitBtn">Send</button>
 </form>
