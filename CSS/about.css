@@ -212,14 +212,14 @@ body {
     background-color: #020202;
     width: 100%;
     height: auto;
-    max-height: 76vh;
+    max-height: 77vh;
   }
   .about_me_heading_text {
     justify-content: center;
     position: sticky;
     top: 7rem;
     z-index: 1;
-    background-color: rgb(24, 24, 24);
+    background-color: black;
 
     border-bottom: 1px solid #fff;
     box-shadow: none;
@@ -233,7 +233,7 @@ body {
   }
   .footer {
     background-color: var(--footer-color);
-
+    position: none;
     z-index: 2;
   }
   .aboutMe_container {
