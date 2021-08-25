@@ -239,5 +239,6 @@ body {
   }
   .about_me_info {
     padding: 1.2rem;
+    position: sticky;
   }
 }

@@ -214,6 +214,7 @@ body {
   .footer_container {
     position: absolute;
     bottom: 0;
+    z-index: 2;
   }
   .form_main_container {
     margin: 1rem;
