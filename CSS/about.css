@@ -216,7 +216,7 @@ body {
   .about_me_heading_text {
     justify-content: center;
     position: sticky;
-    top: 7rem;
+    top: 5rem;
     z-index: 1;
     background-color: black;
 
