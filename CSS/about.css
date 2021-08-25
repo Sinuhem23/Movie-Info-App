@@ -231,8 +231,7 @@ body {
     padding: 1rem;
   }
   .footer {
-    background-color: var(--footer-color);
-    z-index: 1;
+    position: inherit;
   }
   .aboutMe_container {
     opacity: 1;
