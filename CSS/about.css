@@ -231,7 +231,6 @@ body {
     padding: 1rem;
   }
   .footer_container {
-    position: inherit;
     z-index: 1;
   }
   .aboutMe_container {
