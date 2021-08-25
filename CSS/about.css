@@ -200,7 +200,6 @@ body {
   }
   .img_container {
     padding-bottom: 6.5rem;
-    z-index: 1;
   }
   .aboutMe_container {
     color: #fff;
@@ -233,10 +232,12 @@ body {
   }
   .footer {
     background-color: var(--footer-color);
-    position: none;
-    z-index: 2;
+    z-index: 1;
   }
   .aboutMe_container {
     opacity: 1;
+  }
+  .about_me_info {
+    padding: 1.3rem;
   }
 }
