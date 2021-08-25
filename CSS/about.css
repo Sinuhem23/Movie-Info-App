@@ -200,6 +200,7 @@ body {
   }
   .img_container {
     padding-bottom: 6.5rem;
+    z-index: 1;
   }
   .aboutMe_container {
     color: #fff;
@@ -216,9 +217,9 @@ body {
   .about_me_heading_text {
     justify-content: center;
     position: sticky;
-    top: 5rem;
+    top: 7rem;
     z-index: 1;
-    background-color: transparent;
+    background-color: rgb(24, 24, 24);
 
     border-bottom: 1px solid #fff;
     box-shadow: none;
