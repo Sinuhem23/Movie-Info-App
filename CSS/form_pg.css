@@ -215,7 +215,7 @@ body {
     z-index: 2;
   }
   .form_main_container {
-    margin: 1rem;
+    margin: 1rem 1rem 3rem 1rem;
   }
 
   .form_container {
@@ -225,6 +225,9 @@ body {
     max-height: 77vh;
 
     top: 28px;
+  }
+  .title {
+    margin-top: 5px;
   }
 
   .subtitle {
