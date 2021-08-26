@@ -37,10 +37,12 @@ function showMovies(data) {
   data.forEach((movie) => {
     // creating multiple const (of which are properties of the api's results object) at once to equal the parameter of movie
     const { title, poster_path, vote_average, release_date, overview } = movie;
+    // creating HTML element "movieElement"
     const movieElement = document.createElement('div');
     movieElement.classList.add('movie');
     // Dynamically populating into html
     movieElement.innerHTML = `<img src="${
+      // if no image (poster_path) in the results object display chosen image
       poster_path
         ? IMG_URL + poster_path
         : 'https://www.starpik.com/wp-content/uploads/_sz/126430.jpg'
@@ -59,6 +61,7 @@ function showMovies(data) {
       </div>
     
     `;
+    // appending main body to the movieElement and displaying dynamic html elements
     main.appendChild(movieElement);
   });
 }
@@ -161,6 +164,7 @@ function setGenre() {
   tagsElement.innerHTML = '';
   // Getting each genre to populate in a new div with a class of "tag" and an id of it's genre's api id. Then displaying the name
   genres.forEach((genre) => {
+    // creating an HTML element (genre_tags)
     const genre_tags = document.createElement('div');
     genre_tags.classList.add('tag');
     genre_tags.id = genre.id;
@@ -226,7 +230,7 @@ function resetBtn() {
       // to reset back as if page were refreshed
       getMovies(API_URL);
     });
-
+    // appends reset to the tags HTML elements (tagsElements)
     tagsElement.append(reset);
   }
 }
@@ -240,8 +244,10 @@ form.addEventListener('submit', (e) => {
   highlightSection();
 
   if (searchTerm) {
+    // If word searched, call function getMovies with the parameters of "searchURL + '&query=' + searchTerm"
     getMovies(searchURL + '&query=' + searchTerm);
   } else {
+    // call getMovie function with the const variable API_URL as it's parameter - as if page were refreshed
     getMovies(API_URL);
   }
 });

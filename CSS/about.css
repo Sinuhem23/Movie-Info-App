@@ -1,3 +1,5 @@
+/* Affects all //////////////////////////////////////// */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
 * {
   box-sizing: border-box;
@@ -28,7 +30,9 @@ body {
 .test {
   display: grid;
 }
+/* End of Affects all //////////////////////////////////////// */
 
+/* Navbar ///////////////////////////////////////////////// */
 .nav {
   border-bottom: 4px solid rgb(49, 56, 63);
   display: flex;
@@ -64,8 +68,9 @@ body {
   padding-right: 6rem;
   align-items: center;
 }
+/* End of Navbar ///////////////////////////////////////////////// */
+/* About Me Section ////////////////////////////////////// */
 .img_container {
-  /* background-image: url('../Image/about-me-bg.jpeg'); */
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
@@ -126,6 +131,7 @@ body {
   align-self: center;
   flex-wrap: wrap;
 }
+/* End of About Me Section ////////////////////////////////////// */
 /* Footer Section  ////////////////////*/
 .footer_container {
   display: grid;

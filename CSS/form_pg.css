@@ -1,3 +1,5 @@
+/* Affects all //////////////////////////////////////// */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
 * {
   box-sizing: border-box;
@@ -23,6 +25,9 @@ body {
   margin: 0;
   background-color: var(--primary-color);
 }
+/* End of Affects all //////////////////////////////////////// */
+
+/* Navbar ///////////////////////////////////////////////// */
 .nav {
   border-bottom: 4px solid rgb(49, 56, 63);
   display: flex;
@@ -57,7 +62,8 @@ body {
   padding-right: 6rem;
   align-items: center;
 }
-/* Survey Form ///////////////////////////// */
+/* End of Navbar ///////////////////////////////////////////////// */
+/* Survey Form ///////////////////////////////////// */
 
 .form_container {
   background-size: cover;
@@ -132,7 +138,6 @@ body {
 .form_input {
   background-color: transparent;
 
-  /* background-color: var(--secondary-color); */
   border-radius: 12px;
   margin-top: 1rem;
   border: 0;
