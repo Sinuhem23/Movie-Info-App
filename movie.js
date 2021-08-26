@@ -21,21 +21,25 @@ function getMovies(url) {
     .then((res) => res.json())
     .then((data) => {
       console.log(data.results);
+      // If the results property of data is not 0(none) then envoke the function showMovies passing the parameter of data's property, results
       if (data.results.length !== 0) {
         showMovies(data.results);
       } else {
+        // Else display No Results Found on the main content of the body (<main>)
         main.innerHTML = `<h1 class='no_Results'>No Results Found</h1>`;
       }
     });
 }
 
-// Function to all show movies and some data details
+// Function which shows movies and data details
 function showMovies(data) {
   main.innerHTML = '';
   data.forEach((movie) => {
+    // creating multiple const (of which are properties of the api's results object) at once to equal the parameter of movie
     const { title, poster_path, vote_average, release_date, overview } = movie;
     const movieElement = document.createElement('div');
     movieElement.classList.add('movie');
+    // Dynamically populating into html
     movieElement.innerHTML = `<img src="${
       poster_path
         ? IMG_URL + poster_path
@@ -153,8 +157,9 @@ const genres = [
 var selectedGenre = [];
 setGenre();
 function setGenre() {
-  // Set empty to populate for forloop
+  // Set empty to populate  with forEach
   tagsElement.innerHTML = '';
+  // Getting each genre to populate in a new div with a class of "tag" and an id of it's genre's api id. Then displaying the name
   genres.forEach((genre) => {
     const genre_tags = document.createElement('div');
     genre_tags.classList.add('tag');
@@ -166,8 +171,8 @@ function setGenre() {
         selectedGenre.push(genre.id);
       } else {
         if (selectedGenre.includes(genre.id)) {
+          // remove array from selectedGenre when clicked again
           selectedGenre.forEach((id, index) => {
-            // remove array from selectedGenre when clicked again
             if (id == genre.id) {
               selectedGenre.splice(index, 1);
             }
@@ -190,8 +195,9 @@ function highlightSection() {
   tags.forEach((tag) => {
     tag.classList.remove('highlight');
   });
+  // Calling resetBtn function
   resetBtn();
-
+  // If genre are selected, highlighted class is given to be highlighted.
   if (selectedGenre.length != 0) {
     selectedGenre.forEach((id) => {
       const highlightedTag = document.getElementById(id);
@@ -199,18 +205,22 @@ function highlightSection() {
     });
   }
 }
+
 // Function that adds highligt to reset btn if it exists else brings out a reset button once genre is highlighted
 function resetBtn() {
   let resetBtn = document.getElementById('reset');
+  // If a reset button exists, button is highlighted
   if (resetBtn) {
     resetBtn.classList.add('hightlight');
   } else {
+    // If it does not exist, a new HTML element is created and attached to the DOM tree
     let reset = document.createElement('div');
     reset.classList.add('tag', 'highlight');
     reset.id = 'reset';
     reset.innerText = 'Reset';
-    // Function that removes all the selected genres
+
     reset.addEventListener('click', () => {
+      // Function that removes all the selected genres and restarts it (refresh)
       selectedGenre = [];
       setGenre();
       // to reset back as if page were refreshed
